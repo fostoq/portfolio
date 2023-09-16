@@ -1,0 +1,221 @@
+@import "../../global.scss";
+
+.portfolio{
+    background-color: white;
+    height: 100vh;
+    display: flex;
+
+    @include mobile{  
+        flex-direction: column;
+        align-items: center;
+      }
+
+
+    .p-left{
+        flex: 1;
+        display: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        height: 100%;
+        background-color: white;
+
+        @include mobile {
+            flex: 0.6;
+            width: 100%;
+            height: 50%;
+
+
+        }
+
+        .p-card.bg{
+            position: absolute;
+            top: 40px;
+            left: 10px;
+            background-color: #333;
+
+            @include mobile{
+
+                left:8.5px;
+                width: 85%;
+                height: 60%;
+                justify-content: center;
+                align-items: center;
+
+            }
+        }
+    
+        .p-card{
+            width: 80%;
+            height: 70vh;
+            border-radius: 30px;
+            overflow: hidden;
+            position: relative;
+            left: 70px;
+            top: 100px;
+            border: 3px solid black;
+
+            @include mobile{
+                left: 25px;
+                top: 20px;
+                bottom: 0px;
+                width: 85%;
+                height: 80%;
+                margin-right: 5%;
+                justify-content: center;
+                align-items: center;
+            }
+    
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;    
+                
+             }
+   
+        }
+    }
+
+    .p-right{
+
+        flex: 0.8;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 40px;
+        align-items: flex-start;
+        background-color: white;
+
+        @include mobile {
+            flex: 1.5;
+            width: 100%;
+            margin-left: 50px;
+            padding: 0 10px;
+        }
+
+        .p-title{
+            font-weight: 900;
+            margin-right: 0;
+            text-align: left;
+            color: black;
+
+        }
+
+        .p-desc{
+            font-weight: 500;
+            margin: 20px 0px;
+            margin-right: 60px;
+            font-size: large;
+            color: black;
+            a {
+                text-decoration: none;
+                color: rgb(132, 74, 132);
+            }
+
+            @include mobile {
+                font-size: 100%;
+                font-weight: 500;
+
+            }
+            
+        }
+
+        .resume{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 50%;
+            width: 90%;
+            flex-wrap: wrap;
+            border-radius: 20px;
+            border: 3px solid black;
+            position: relative;
+            transition: all .8s ease;
+            background-color: gray;
+            cursor: pointer;
+            margin-right: 6%;
+            margin-bottom: 4%;
+
+            @include mobile {
+                width: 85%;
+                height: 25%;
+                margin-right: 5%;
+                justify-content: center;
+                align-items: center;
+
+            }
+            
+            h3 {
+                position: absolute;
+                font-size: 40px;
+                color: black;
+                opacity: 0;
+                
+            }
+
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                z-index: 1;
+            }
+
+            &:hover {
+                
+                background-color: #858080;
+
+                h3{
+                    opacity: 3;
+                    font-weight: bolder;
+
+                    @include mobile{
+                        font-size: 30px;
+                    }
+                }
+
+                img {
+                    opacity: 0.1;
+                    z-index: 0;
+
+                }
+            }
+
+            a{
+                height: 100%;
+                width: 100%;
+                overflow: hidden;
+            }
+
+        }
+
+
+    }
+
+}
+
+@media screen and (max-width: 480px) {
+
+    .portfolio{ 
+        flex-direction: column;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .p-left {
+        width: 100%;
+    }
+
+    .p-card {
+        height: 30vh;
+    }
+
+    .p-card.bg {
+        display: none;
+    }
+
+    .p-title{ 
+        margin-left: 30%;
+        font-size: 150%;
+    }
+
+  }

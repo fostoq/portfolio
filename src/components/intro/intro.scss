@@ -1,0 +1,156 @@
+@import "../../global.scss";
+
+.intro{
+    background-color: white;
+    display: flex;
+    background-image: url(intro.JPG);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    
+    @include mobile{  
+        flex-direction: column;
+        align-items: center;
+      }
+
+    .left{
+        flex: 0.5;
+        overflow: hidden;
+
+        .imgContainer{
+            width: 650px;
+            height: 650px;
+            border-bottom-right-radius: 80vw;
+            background-color: rgb(132, 74, 132); 
+
+            @include mobile{  
+                align-items: flex-start;
+              }
+
+            img{
+                height: 80%;
+
+                @include mobile{  
+                    height: 50%;
+                  }
+            }
+        }
+    }
+
+    .right{
+        flex: 0.5;
+        display: relative;
+
+
+        .wrapper{
+            width: 100%;
+            height: 100%;
+            padding-right: 120px;
+            margin-right: 10%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: whitesmoke;
+            position: relative;
+
+            @include mobile {
+                padding-left: 0;
+                align-items: left;
+
+            }
+
+            h1{
+                font-size: 60px;
+                margin-left: 40px;
+
+                @include mobile {
+                    font-size: 40px;
+                } 
+            }
+
+            h2{
+                margin-top: 30px;
+                font-size: 35px;
+                margin-left: 40px;
+
+                @include mobile {
+                    text-align: left;
+                } 
+                
+            }
+
+            h3{
+                font-size: 30px;
+                margin-left: 40px;
+
+                @include mobile {
+                    font-size: 20px;
+                } 
+
+
+                span{
+                   font-size: inherit;
+                }
+
+                .ityped-cursor{
+                    animation: blink 1s infinite;
+                }
+
+                @keyframes blink {
+                    50%{
+                        opacity: 1;
+                    }
+                    100%{
+                        opacity: 0;
+                    }
+                }
+
+            }
+        }
+            
+    }
+
+    .itemContainer{
+        position:absolute;
+        bottom: 10px;
+        left: 68%;
+        display: flex;
+        align-items: center;
+        text-align: center;
+
+        .icon{
+            font-size: 60px;
+            color: white;
+            animation: arrowBlink 5s infinite;
+            stroke-width: 1;
+
+            @include mobile{
+                display: none;
+             }
+        }
+
+        @keyframes arrowBlink {
+            0% {
+              transform: translateY(0);
+              opacity: 1;
+            }
+            50% {
+              transform: translateY(-20px);
+              opacity: 0;
+            }
+            100% {
+              transform: translateY(0);
+              opacity: 1;
+            }
+        }
+
+    }
+}
+
+@include mobile{
+    .intro {
+        background-size: cover;
+        background-position: 25%;
+    }
+}
