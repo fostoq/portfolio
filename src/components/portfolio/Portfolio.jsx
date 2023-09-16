@@ -8,7 +8,7 @@ export default function portfolio() {
          <div className="p-card bg"></div>
          <div className="p-card">
 
-           <img src="pictures/ede3ed91-a099-4c1f-8608-c72ded2c0e5d (1).JPG" alt="Reem"/>
+           <img src= {require ('./ede3ed91-a099-4c1f-8608-c72ded2c0e5d (1).JPG')}  alt="Testing"/>
          </div>
        </div>
 
