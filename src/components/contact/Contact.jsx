@@ -12,27 +12,23 @@ export default function Contact() {
     e.preventDefault();
     
 
-    emailjs.sendForm('service_5oheurd', 'template_g478ogl', ref.current, 'Y-9DbPZRp7FPOtFtv')
+    emailjs.sendForm('service_5zk72j8', 'template_kxacar5', ref.current, 'MMOXr_KIG3CriR7H4')
     .then((result) => {
         console.log(result.text);
         setSuccess(true);
+        e.target.reset();
+        
+    setTimeout(() => {
+          setSuccess(null);
+        }, 1000); 
     }, (error) => {
         console.log(error.text);
-        setSuccess(false);
+        setSuccess(false);  
     });
-
   };
 
   return (
     <div className="contact" id= "contact">
-
-    {/* <div className="left">
-      <img src="pictures/plane3.png" />
-    </div>  */}
-
-    {/* <div className="left2">
-      <img src="pictures/plane3.png" />
-    </div>  */}
 
     <div className="middle">
         <h2>Contact Me</h2>
@@ -43,11 +39,6 @@ export default function Contact() {
           {success && <strong>Thank you for your message :)</strong>}
         </form>
       </div>
-{/* 
-    <div className="right">
-      <img src="pictures/plane2.png" />
-    </div>  */}
-
 
     </div>
   )

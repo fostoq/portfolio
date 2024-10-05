@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./works.scss"
 import angular from '../picture/angular2.webp'; 
 import java from '../picture/java1.png';
+import python from '../picture/python.png';
 
 export default function Works() {
 
@@ -22,13 +23,21 @@ export default function Works() {
       desc: "This Java project serves as a comprehensive demonstration of the practical application of design patterns. It showcases the utilization of various design patterns in software architecture (UML), enhancing code reliability, reusability, and overall efficiency. Click the image to view the source code!",
       img:  java,
       link: "https://gitfront.io/r/rkabdoon/nRQcUG4BNcrq/abdoon-design-patterns/",
+    }, 
+
+    {
+      id: "3",
+      title: "Ebook-PR Application",
+      desc: "This desktop application allows librarians to access and know whether they have perpetual rights to a specific book. This is done by scraping excel files from the CRKN Website. These excel files are then added to a local SQLite database with a neat front-end PyQt GUI to support user interaction. Click the image to view the source code!",
+      img:  python,
+      link: "https://github.com/CS-4820-Library-Project/Ebook_Perpetual_Access_Tracking",
     }
 
   ];
 
 
   const handleClick = (way)=>{
-    way === "left" ? setCurrentSlide(currentSlide > 0 ? currentSlide-1 : 1) 
+    way === "left" ? setCurrentSlide(currentSlide > 0 ? currentSlide-1 : data.length-1) 
     : setCurrentSlide(currentSlide < data.length-1 ? currentSlide+1 : 0);
   }
 
